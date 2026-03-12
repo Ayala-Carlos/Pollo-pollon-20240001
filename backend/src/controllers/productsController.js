@@ -26,3 +26,11 @@ productsController.updateProducts = async (req, res) => {
 
     res.json({message: "product update"})
 }
+
+//eliminar
+productsController.deleteProducts = async (req, res) => {
+    await productsModel.findByIdAndDelete(req.params.id)
+    res.json({message: "Product deleted"})
+}
+
+export default productsController;
