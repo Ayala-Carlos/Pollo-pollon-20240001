@@ -1,4 +1,5 @@
 import app from "./app"
+import "./database"
 
 //Creo la función
 //que se encarga de ejecutar el servidor
