@@ -1,5 +1,5 @@
 import express from "express"
-import productsController from "../controllers/productsController";
+import productsController from "../controllers/productsController.js";
 
 //Router() nos ayuda a colocar los métodos
 //que tendrá mi endpoint
@@ -10,7 +10,7 @@ router.route("/")
 .get(productsController.getProducts)
 .post(productsController.insertProducts)
 
-router,route("/:id")
+router.route("/:id")
 .put(productsController.updateProducts)
 .delete(productsController.deleteProducts)
 

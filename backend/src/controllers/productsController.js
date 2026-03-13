@@ -1,7 +1,7 @@
 //creo un array de metodos
 const productsController = {};
 //importar el schema de la coleccion que voy a ocupar
-import productsModel from "../models/products";
+import productsModel from "../models/products.js";
 
 //SELECT        
 productsController.getProducts = async(req, res) => {
