@@ -9,7 +9,7 @@ import jsonwebtoken from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 
 const registerEmployeeController = {}
-import employeeModel from "../models/employees.js"
+import employeeModel from "../models/employee.js"
 import { config } from "../../config.js";
 
 registerEmployeeController.register = async (req, res) => {
