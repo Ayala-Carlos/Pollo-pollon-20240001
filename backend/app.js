@@ -10,6 +10,7 @@ import registerEmployee from "./src/routes/registerEmployee.js";
 import loginCustomers from "./src/routes/loginCustomers.js";
 import logoutCustomers from "./src/routes/logout.js"
 import cookieParser from "cookie-parser";
+import recoveryPassword from "./src/routes/recoveryPassword.js";
 
 //Ejecutar express
 const app = express();
@@ -29,6 +30,9 @@ app.use("/api/registerCustomers", registerCustomer)
 app.use("/api/registerEmployees", registerEmployee)
 app.use("/api/loginCustomers", loginCustomers)
 app.use("/api/logout", logoutCustomers)
+app.use("/api/recoveryPassword", recoveryPassword)
+
+
 
 export default app;
 
