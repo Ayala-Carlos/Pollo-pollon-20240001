@@ -12,6 +12,7 @@ import logoutCustomers from "./src/routes/logout.js"
 import cookieParser from "cookie-parser";
 import recoveryPassword from "./src/routes/recoveryPassword.js";
 import cors from "cors";
+import limiter from "./src/middlewares/limiter.js"
 
 //Ejecutar express
 const app = express();
@@ -22,6 +23,7 @@ app.use(cors({
     credentials: true
 }));
 
+app.use(limiter)
 app.use(cookieParser());
 app.use(express.json())
 
@@ -31,7 +33,7 @@ app.use("/api/products", productsRoutes)
 app.use("/api/branches", branchesRoutes)
 app.use("/api/employees", employeeRoutes)
 app.use("/api/reviews", reviewsRoutes)
-app.use("/api/providers", providersRoutes)
+app.use("/api/providers", limiter ,providersRoutes)
 app.use("/api/customers", customersRoutes)
 app.use("/api/registerCustomers", registerCustomer)
 app.use("/api/registerEmployees", registerEmployee)
