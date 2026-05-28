@@ -14,6 +14,7 @@ import recoveryPassword from "./src/routes/recoveryPassword.js";
 import cors from "cors";
 import limiter from "./src/middlewares/limiter.js"
 import bannerRoutes from "./src/routes/banners.js"
+import cartRoutes from "./src/routes/cart.js"
 
 //Ejecutar express
 const app = express();
@@ -42,6 +43,7 @@ app.use("/api/loginCustomers", loginCustomers)
 app.use("/api/logout", logoutCustomers)
 app.use("/api/recoveryPassword", recoveryPassword)
 app.use("/api/banners", bannerRoutes)
+app.use("/api/cart", cartRoutes)
 
 
 export default app;
