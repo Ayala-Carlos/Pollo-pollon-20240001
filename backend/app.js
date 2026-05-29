@@ -44,6 +44,7 @@ app.use("/api/logout", logoutCustomers)
 app.use("/api/recoveryPassword", recoveryPassword)
 app.use("/api/banners", bannerRoutes)
 app.use("/api/cart", cartRoutes)
+app.use("/api/wompi")
 
 
 export default app;
