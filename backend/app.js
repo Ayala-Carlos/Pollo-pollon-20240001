@@ -15,6 +15,8 @@ import cors from "cors";
 import limiter from "./src/middlewares/limiter.js"
 import bannerRoutes from "./src/routes/banners.js"
 import cartRoutes from "./src/routes/cart.js"
+import wompiRoutes from "./src/routes/wompi.js"
+import deliveryRoutes from "./src/routes/deliveryDrivers.js"
 
 //Ejecutar express
 const app = express();
@@ -44,7 +46,8 @@ app.use("/api/logout", logoutCustomers)
 app.use("/api/recoveryPassword", recoveryPassword)
 app.use("/api/banners", bannerRoutes)
 app.use("/api/cart", cartRoutes)
-app.use("/api/wompi")
+app.use("/api/wompi", wompiRoutes)
+app.use("/api/deliveryDrivers",deliveryRoutes)
 
 
 export default app;

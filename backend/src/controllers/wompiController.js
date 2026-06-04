@@ -61,6 +61,7 @@ wompiController.paymentTest = async (req, res) => {
     }
 };
 
+//Transacción real
 wompiController.payment3ds = async (req, res) => {
     try {
         const {token, formData} = req.body
@@ -73,7 +74,7 @@ wompiController.payment3ds = async (req, res) => {
             body: JSON.stringify(formData)
         });
  
-        if (!response.ok) {
+        if (!response) {
             const error = await response.text();
             return res.status(500).json({ error: 'Failed to process payment', details: errorData });
         }
@@ -81,8 +82,8 @@ wompiController.payment3ds = async (req, res) => {
         res.status(200).json(data);
     } catch (error) {
         console.error('Error processing payment:'+ error);
-        res.status(500).json({ error: 'Failed to process payment' });
+        res.status(500).json({ error: 'Internal server error' });
     }
-};
+}; 
 
 export default wompiController;
