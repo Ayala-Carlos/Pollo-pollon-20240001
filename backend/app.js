@@ -20,6 +20,9 @@ import deliveryRoutes from "./src/routes/deliveryDrivers.js"
 import eventsRoutes from "./src/routes/events.js"
 import { validateAuthCookie } from "./src/middlewares/authMiddleware.js";
 
+import swaggerUi from "swagger-ui-express"
+import swaggerDocument from "./src/utils/jupaca-e63-Jupaca-1.0.0-resolved.json" with {type: "json"}
+
 //Ejecutar express
 const app = express();
 
@@ -52,6 +55,8 @@ app.use("/api/wompi", wompiRoutes)
 app.use("/api/deliveryDrivers",deliveryRoutes)
 app.use("/api/events", eventsRoutes  )
 
+//Endpoint para la documentación en swagger
+app.use("/api/documentation", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 export default app;
 
